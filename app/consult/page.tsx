@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Schedule a Consultation" };
+export const metadata: Metadata = {
+  title: "Schedule a Free Homebuyer Consultation",
+  description:
+    "Schedule a free 30-minute homebuyer consultation with North Carolina Realtor Donovan Teasley and leave with clear next steps.",
+  alternates: { canonical: "/consult" },
+};
 
 export default function ConsultPage() {
   return (

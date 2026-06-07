@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 
-export const metadata: Metadata = { title: "Buyer Resources" };
+export const metadata: Metadata = {
+  title: "North Carolina Homebuyer Assistance Resources",
+  description:
+    "Explore down payment, closing-cost, and first-time homebuyer assistance resources with North Carolina Realtor Donovan Teasley.",
+  alternates: { canonical: "/blog" },
+};
 
 const resources = [
   {

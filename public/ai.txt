@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Canonical entity information is available at:
+https://keyswithdon.github.io/llms.txt
+
+Sitemap:
+https://keyswithdon.github.io/sitemap.xml

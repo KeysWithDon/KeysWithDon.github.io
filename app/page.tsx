@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Donovan Teasley | North Carolina First-Time Homebuyer Realtor",
+  description:
+    "Work with North Carolina Realtor Donovan Teasley for clear guidance on first-time homebuying, credit preparation, buying power, and assistance programs.",
+  alternates: { canonical: "/" },
+};
 
 const steps = [
   ["01", "Understand your position", "We start with your goals, questions, and current buying readiness."],

@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata: Metadata = { title: "Credentials" };
+export const metadata: Metadata = {
+  title: "Donovan Teasley Credentials | North Carolina Realtor",
+  description:
+    "Review Donovan Teasley's North Carolina real estate credentials, brokerage affiliation, license pocket card, and first-time buyer expertise.",
+  alternates: { canonical: "/credentials" },
+};
 
 export default function CredentialsPage() {
   return (
