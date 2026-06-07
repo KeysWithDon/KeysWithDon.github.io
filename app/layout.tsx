@@ -95,6 +95,8 @@ export default function RootLayout({
                     "Down payment assistance",
                     "Homebuyer credit preparation",
                   ],
+                  description:
+                    "Donovan Teasley is a licensed North Carolina Realtor focused on clear, practical guidance for first-time homebuyers.",
                 },
                 {
                   "@type": ["RealEstateAgent", "ProfessionalService"],
