@@ -9,6 +9,18 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "*",
         allow: "/",
       },
+      {
+        userAgent: "OAI-SearchBot",
+        allow: "/",
+      },
+      {
+        userAgent: "ChatGPT-User",
+        allow: "/",
+      },
+      {
+        userAgent: "GPTBot",
+        allow: "/",
+      },
     ],
     sitemap: "https://keyswithdon.github.io/sitemap.xml",
     host: "https://keyswithdon.github.io",
