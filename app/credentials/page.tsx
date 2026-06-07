@@ -1,104 +1,70 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+
+export const metadata: Metadata = { title: "Credentials" };
+
 export default function CredentialsPage() {
   return (
-    <section style={{ padding: "30px 6px" }}>
-      <h1 style={{ margin: "0 0 16px", fontSize: 44 }}>
-        Credentials
-      </h1>
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: 22,
-          alignItems: "start",
-        }}
-      >
-        {/* LEFT: PHOTO + BIO */}
-        <div
-          style={{
-            borderRadius: 18,
-            padding: 18,
-            border: "1px solid rgba(255,255,255,0.14)",
-            background: "rgba(255,255,255,0.06)",
-          }}
-        >
-          <img
-            src="/images/headshot.png"
-            alt="Donovan Teasley"
-            style={{
-              width: "100%",
-              maxWidth: 520,
-              height: "auto",
-              borderRadius: 18,
-              display: "block",
-              objectFit: "cover",
-              border: "1px solid rgba(255,255,255,0.18)",
-            }}
-          />
-
-          <h2 style={{ margin: "18px 0 6px" }}>Donovan Teasley, NC Realtor</h2>
-          <p style={{ margin: 0, opacity: 0.85 }}>
-            The Next Level Realty Plus
-          </p>
-
-          <p style={{ marginTop: 14, lineHeight: 1.7, opacity: 0.9 }}>
-            I help first-time home buyers turn “maybe someday” into a real plan with clear
-            guidance on credit, buying power, and the steps that move you from curious to confident.
-          </p>
-        </div>
-
-        {/* RIGHT: CREDENTIALS */}
-        <div
-          style={{
-            borderRadius: 18,
-            padding: 18,
-            border: "1px solid rgba(255,255,255,0.14)",
-            background: "rgba(255,255,255,0.06)",
-          }}
-        >
-          <h2 style={{ margin: "0 0 10px" }}>Professional Credentials</h2>
-
-          <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.8, opacity: 0.9 }}>
-            <li>NC Realtor</li>
-            <li>The Next Level Realty Plus</li>
-            <li>First-time buyer strategy & guidance</li>
-          </ul>
-
-          <h3 style={{ margin: "18px 0 10px" }}>License</h3>
-
-          <div
-            style={{
-              borderRadius: 16,
-              overflow: "hidden",
-              border: "1px solid rgba(255,255,255,0.14)",
-              background: "rgba(255,255,255,0.06)",
-              padding: 14,
-              maxWidth: 640,
-            }}
-          >
-            <img
-              src="/images/license.png"
-              alt="Real Estate License"
-              style={{
-                width: "100%",
-                height: "auto",
-                borderRadius: 12,
-                display: "block",
-                background: "white",
-              }}
-            />
-          </div>
-        </div>
+    <section className="page-shell">
+      <div className="page-intro">
+        <p className="eyebrow">Professional background</p>
+        <h1>Guidance grounded in service and clarity.</h1>
+        <p className="lede">
+          Meet the Realtor behind Keys With Don and review the credentials that
+          support your buying journey.
+        </p>
       </div>
 
-      {/* Mobile friendly tweak */}
-      <style>{`
-        @media (max-width: 900px) {
-          section > div {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
+      <div className="credentials-grid">
+        <article className="profile-card card">
+          <div className="profile-image">
+            <Image
+              src="/images/headshot.png"
+              alt="Donovan Teasley"
+              fill
+              priority
+              sizes="(max-width: 850px) 100vw, 430px"
+            />
+          </div>
+          <div className="profile-copy">
+            <span className="pill">NC Realtor</span>
+            <h2>Donovan Teasley</h2>
+            <p className="profile-company">The Next Level Realty Plus</p>
+            <p>
+              I help first-time home buyers turn “maybe someday” into a real
+              plan with clear guidance on credit, buying power, and the steps
+              that move you from curious to confident.
+            </p>
+            <Link className="button" href="/contact">Start a conversation</Link>
+          </div>
+        </article>
+
+        <aside className="credential-stack">
+          <div className="credential-summary card">
+            <p className="eyebrow">At a glance</p>
+            <h2>Professional credentials</h2>
+            <ul className="check-list">
+              <li>Licensed North Carolina Realtor</li>
+              <li>The Next Level Realty Plus</li>
+              <li>First-time buyer strategy and guidance</li>
+            </ul>
+          </div>
+          <div className="license-card card">
+            <div>
+              <span className="pill">Current through 06/30/27</span>
+              <h3>North Carolina license pocket card</h3>
+            </div>
+            <Image
+              src="/images/nc-real-estate-pocketcard-2027.png"
+              alt="North Carolina real estate license pocket card"
+              width={654}
+              height={412}
+              sizes="(max-width: 850px) 100vw, 560px"
+            />
+          </div>
+        </aside>
+      </div>
     </section>
   );
 }

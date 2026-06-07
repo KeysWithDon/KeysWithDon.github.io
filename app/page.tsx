@@ -1,114 +1,81 @@
+import Image from "next/image";
+import Link from "next/link";
+
+const steps = [
+  ["01", "Understand your position", "We start with your goals, questions, and current buying readiness."],
+  ["02", "Build a clear plan", "Get practical next steps for credit, buying power, and financing."],
+  ["03", "Move with confidence", "Navigate the buying process with an advocate in your corner."],
+];
+
 export default function Home() {
   return (
     <>
-      {/* HERO SECTION */}
-      <section
-        style={{
-          minHeight: 650,
-          backgroundImage: "url(/images/hero.png)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          position: "relative",
-          borderRadius: 18,
-          overflow: "hidden",
-        }}
-      >
-        {/* DARK OVERLAY */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0.05) 100%)",
-          }}
+      <section className="home-hero">
+        <Image
+          className="home-hero-image"
+          src="/images/hero.png"
+          alt="A welcoming modern home"
+          fill
+          priority
+          sizes="100vw"
         />
-
-        {/* FROSTED GLASS BRANDING BOX */}
-        <div
-          style={{
-            position: "absolute",
-            top: 22,
-            left: 22,
-            zIndex: 2,
-            display: "flex",
-            alignItems: "center",
-            gap: 18,
-            padding: "16px 20px",
-            borderRadius: 18,
-            background: "rgba(255,255,255,0.30)",
-            backdropFilter: "blur(14px)",
-            WebkitBackdropFilter: "blur(14px)",
-            border: "1px solid rgba(255,255,255,0.55)",
-            boxShadow: "0 8px 28px rgba(0,0,0,0.25)",
-          }}
-        >
-          {/* HEADSHOT */}
-          <img
-            src="/images/headshot.png"
-            alt="Donovan Teasley"
-            style={{
-              width: 80,
-              height: 80,
-              borderRadius: "50%",
-              objectFit: "cover",
-              border: "2px solid white",
-            }}
-          />
-
-          {/* COMPANY LOGO */}
-          <img
-            src="/images/logo.png"
-            alt="The Next Level Realty Plus"
-            style={{
-              width: 80,
-              height: 80,
-              objectFit: "contain",
-            }}
-          />
-
-          {/* NAME + BROKERAGE */}
-          <div style={{ color: "#0b1b3a", lineHeight: 1.25 }}>
-            <div style={{ fontWeight: 800, fontSize: 20 }}>
-              Donovan Teasley, NC Realtor
-            </div>
-            <div style={{ fontSize: 15 }}>
-              The Next Level Realty Plus
-            </div>
+        <div className="home-hero-overlay" />
+        <div className="home-hero-content">
+          <p className="eyebrow hero-eyebrow">North Carolina real estate guidance</p>
+          <h1>Your path home starts with a clear plan.</h1>
+          <p>
+            Practical guidance, honest answers, and a strategy built around
+            where you are today.
+          </p>
+          <div className="hero-actions">
+            <Link className="button button-light" href="/consult">
+              Schedule a free consultation
+            </Link>
+            <Link className="button button-outline hero-outline" href="/blog">
+              Explore buyer resources
+            </Link>
           </div>
         </div>
+        <div className="hero-trust card">
+          <Image src="/images/headshot.png" alt="Donovan Teasley" width={88} height={88} />
+          <div>
+            <span className="pill">Your local advocate</span>
+            <h3>Donovan Teasley</h3>
+            <p>NC Realtor · The Next Level Realty Plus</p>
+          </div>
+        </div>
+      </section>
 
-        {/* HERO TEXT */}
-        <div
-          style={{
-            position: "relative",
-            zIndex: 1,
-            padding: "240px 60px 80px",
-            maxWidth: 850,
-            color: "white",
-          }}
-        >
-          <h1
-            style={{
-              margin: 0,
-              fontSize: 60,
-              lineHeight: 1.05,
-              fontWeight: 800,
-            }}
-          >
-            Yes, you can buy a home.
-          </h1>
-
-          <p
-            style={{
-              marginTop: 18,
-              fontSize: 22,
-              lineHeight: 1.6,
-              maxWidth: 700,
-              opacity: 0.92,
-            }}
-          >
-            The right guidance today can open the door to homeownership sooner than you think.
+      <section className="page-shell home-intro">
+        <div className="split-heading">
+          <div>
+            <p className="eyebrow">A better first step</p>
+            <h2>Homeownership should feel possible, not confusing.</h2>
+          </div>
+          <p className="lede">
+            I help first-time buyers understand their options, prepare with
+            purpose, and make informed decisions without pressure.
           </p>
+        </div>
+
+        <div className="steps-grid">
+          {steps.map(([number, title, copy]) => (
+            <article className="step-card card card-hover" key={number}>
+              <span>{number}</span>
+              <h3>{title}</h3>
+              <p>{copy}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="home-cta">
+          <div>
+            <p className="eyebrow">Ready when you are</p>
+            <h2>Let’s turn “maybe someday” into a real plan.</h2>
+          </div>
+          <Link className="button button-light" href="/contact">
+            Contact Donovan
+          </Link>
         </div>
       </section>
     </>
