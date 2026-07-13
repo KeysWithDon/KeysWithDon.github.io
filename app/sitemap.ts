@@ -11,5 +11,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/credentials`, changeFrequency: "yearly", priority: 0.8 },
     { url: `${baseUrl}/contact`, changeFrequency: "yearly", priority: 0.8 },
     { url: `${baseUrl}/consult`, changeFrequency: "yearly", priority: 0.9 },
+    {
+      url: `${baseUrl}/keyboard-disciple/`,
+      lastModified: "2026-07-13",
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
   ];
 }

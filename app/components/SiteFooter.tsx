@@ -11,6 +11,7 @@ export default function SiteFooter() {
           </p>
         </div>
         <div className="footer-links" aria-label="Footer navigation">
+          <Link href="/keyboard-disciple/">Keyboard Disciple</Link>
           <Link href="/credentials">Credentials</Link>
           <Link href="/contact">Contact</Link>
           <Link href="/consult">Schedule</Link>
